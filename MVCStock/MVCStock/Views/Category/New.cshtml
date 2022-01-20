@@ -1,0 +1,19 @@
+﻿@model MVCStock.Models.Entity.TBL_Category
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        @*<label>Kategori</label>
+            <input type="text" class="form-control" name="Category">*@
+        <label>Kategori</label>
+        @Html.TextBoxFor(m => m.Category, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Category, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Ekle</button>
+    </div>
+</form>

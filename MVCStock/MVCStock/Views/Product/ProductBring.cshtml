@@ -1,0 +1,36 @@
+﻿@model MVCStock.Models.Entity.TBL_Products
+@{
+    ViewBag.Title = "ProductBring";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("UpdateProduct", "Product", FormMethod.Post))
+{
+    <div class="form-group">
+        Ürün Id
+        @Html.TextBoxFor(m => m.Product_Id, new { @class = "form-control" })
+        <br />
+        Ürün
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        <br />
+        Ürün Kategori
+        @*@Html.TextBoxFor(m => m.Category, new { @class = "form-control" })*@
+        @Html.DropDownListFor(m => m.TBL_Category.Category_Id, (List<SelectListItem>)ViewBag.value, new { @class = "form-control" })
+        <br />
+        Marka
+        @Html.TextBoxFor(m => m.Brand, new { @class = "form-control" })
+        <br />
+        Fiyat
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+        <br />
+        Stok
+        @Html.TextBoxFor(m => m.Stock, new { @class = "form-control" })
+
+    </div>
+    <div>
+        <button class="btn btn-info">Ürün Güncelle</button>
+    </div>
+}
+

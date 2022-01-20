@@ -1,0 +1,35 @@
+﻿@model MVCStock.Models.Entity.TBL_Products
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    <div>
+        <label>Ürün</label>
+        <input type="text" class="form-control" name="Name" required="" maxlength="50" />
+    </div>
+    <div>
+        <label>Marka</label>
+        <input type="text" class="form-control" name="Brand" />
+    </div>
+    <div>
+        <label>Kategori Seçiniz</label>
+        @Html.DropDownListFor(m => m.TBL_Category.Category_Id, (List<SelectListItem>)ViewBag.value, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Fiyat</label>
+        <input type="text" class="form-control" name="Price" />
+    </div>
+    <div>
+        <label>Stok</label>
+        <input type="text" class="form-control" name="Stock" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Ürün Ekle</button>
+    </div>
+
+</form>
+
+

@@ -1,0 +1,46 @@
+﻿@model MVCStock.Models.Entity.TBL_Sales
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#Modal1">Satış</button>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Satış Ekranı</h3>
+            </div>
+            <form method="post" action="/Sales/NewSales">
+                <div class="modal-body">
+                    <label> Ürün </label>
+                    @Html.TextBoxFor(m => m.Product, new { @class = "form-control" })
+                    <br />
+                    <label> Müşteri Adı Soyadı</label>
+                    @Html.TextBoxFor(m => m.Customer, new { @class = "form-control" })
+                    <br />
+                    <label> Adet</label>
+                    @Html.TextBoxFor(m => m.Number, new { @class = "form-control" })
+                    <br />
+                    <label> Fiyat</label>
+                    @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+                    <br />
+                    <button type="submit" class="btn btn-info" id="btnSales">Satış Yap</button>
+                    <button type="reset" class="btn btn-danger" data-dismiss="modal" id="btnSales">İşlemi İptal Et</button>
+
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#btnSales').click(function () {
+        alert('Satış İşlemi Yapıldı... :)');
+    });
+</script>
+
